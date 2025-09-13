@@ -59,8 +59,7 @@ The recommended editor for this project is **Visual Studio Code (VS Code)**. It 
 - Free and open source.  
 - Lightweight but powerful.  
 - Supports HTML, CSS, and JavaScript out of the box.  
-- Extensions like **Live Server** let you preview your app instantly.  
-- Built-in GitHub integration for deployment.  
+ - Built-in GitHub integration for deployment.  
 
 
  🌍 Applications
