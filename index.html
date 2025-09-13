@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Manager with Progress Tracker</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Task Manager — Progress Tracker</h1>
+        <div class="sub">Organize tasks • Track completion • Persisted in your browser</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button id="themeToggle" class="btn secondary" aria-pressed="false">🌙 Theme</button>
+        <button id="exportBtn" class="btn secondary">Export</button>
+      </div>
+    </header>
+
+    <main class="card">
+      <!-- Add task -->
+      <form id="taskForm" class="task-form">
+        <input id="taskTitle" type="text" placeholder="Add a new task" required>
+        <input id="taskDue" type="date">
+        <select id="taskPriority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <div class="controls">
+          <button id="addBtn" class="btn" type="submit">Add task</button>
+          <button id="clearAll" class="btn secondary" type="button">Clear all</button>
+        </div>
+      </form>
+
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div class="progress-meta">
+          <div><strong id="completedCount">0</strong> completed</div>
+          <div><small id="progressPercent">0%</small></div>
+        </div>
+      </div>
+
+      <!-- Filters & tools -->
+      <div class="toolbar">
+        <select id="filter" class="filter">
+          <option value="all">All tasks</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+          <option value="due-today">Due today</option>
+        </select>
+
+        <select id="sort" class="sort">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="priority">Priority (high → low)</option>
+          <option value="due">Due date (soonest)</option>
+        </select>
+
+        <button id="clearCompleted" class="btn secondary">Clear completed</button>
+        <div style="margin-left:auto" class="hint">Tip: click a task title to edit</div>
+      </div>
+
+      <!-- Task list -->
+      <section id="taskList" class="task-list"></section>
+
+      <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+        <div class="sub">Built with plain HTML/CSS/JS • Local Storage</div>
+        <div><small class="hint">Last updated: <span id="lastUpdated">—</span></small></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
